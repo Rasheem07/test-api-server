@@ -5,6 +5,5 @@ services:
     repo: https://github.com/Rasheem07/api-server-for-nginx
     branch: main
     buildCommand: docker build -t api-server .
-    startCommand: docker run -p 5000:5000 api-server
     numInstances: 6
     plan: free
