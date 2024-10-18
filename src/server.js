@@ -1,7 +1,8 @@
 import express from "express";
+import crypto from 'crypto';
 
 const NODE_PORT = process.env.NODE_PORT;
-const HOSTNAME = "my-project";
+const unique_id = crypto.randomUUID();
 
 const app = express();
 
@@ -10,7 +11,7 @@ app.use((req, res, next) => {
   console.log(
     `[${new Date().toISOString()}] ${req.method} ${
       req.url
-    } - Handled by ${HOSTNAME}`
+    } - Handled by ${unique_id}`
   );
   next();
 });
